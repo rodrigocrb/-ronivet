@@ -7,3 +7,17 @@ local.properties
 build/
 .gradle/
 .env
+
+# chaves e credenciais: nunca versionar
+*.pem
+*.p12
+*.pfx
+*.key
+*.keystore
+*.jks
+keystore.properties
+google-services.json
+service-account*.json
+client_secret*.json
+.env
+.env.*
