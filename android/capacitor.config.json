@@ -1,0 +1,11 @@
+{
+  "appId": "br.com.ronivet.app",
+  "appName": "RoniVet",
+  "webDir": "../web",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}

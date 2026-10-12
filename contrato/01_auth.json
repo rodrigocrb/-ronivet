@@ -1,0 +1,23 @@
+{
+  "nome": "autenticação e perfis",
+  "passos": [
+    { "como": null, "metodo": "GET", "caminho": "/api/tutores", "espera": { "status": 401 } },
+    { "como": null, "metodo": "POST", "caminho": "/api/auth/login",
+      "corpo": { "credential": "fake:desconhecido@c.com" }, "espera": { "status": 403 } },
+    { "como": null, "metodo": "POST", "caminho": "/api/auth/login",
+      "corpo": { "credential": "invalida" }, "espera": { "status": 401 } },
+    { "como": null, "metodo": "POST", "caminho": "/api/auth/login",
+      "corpo": { "credential": "fake:sec@c.com" },
+      "espera": { "status": 200, "corpo": { "email": "sec@c.com", "perfil": "SECRETARIA" } } },
+    { "como": "sec@c.com", "metodo": "GET", "caminho": "/api/auth/me",
+      "espera": { "status": 200, "corpo": { "email": "sec@c.com", "nome": "Ana", "perfil": "SECRETARIA", "crmv": "$nulo" } } },
+    { "como": "vet@c.com", "metodo": "GET", "caminho": "/api/auth/me",
+      "espera": { "status": 200, "corpo": { "perfil": "VETERINARIO", "crmv": "CRMV-SP 123" } } },
+    { "como": "sec@c.com", "metodo": "PUT", "caminho": "/api/config-horarios",
+      "corpo": { "dias": [] }, "espera": { "status": 403 } },
+    { "como": "sec@c.com", "metodo": "GET", "caminho": "/api/auditoria", "espera": { "status": 403 } },
+    { "como": "admin@c.com", "metodo": "GET", "caminho": "/api/auditoria", "espera": { "status": 200 } },
+    { "como": "vet@c.com", "metodo": "POST", "caminho": "/api/tutores",
+      "corpo": { "nome": "X", "telefone": "1" }, "espera": { "status": 403 } }
+  ]
+}

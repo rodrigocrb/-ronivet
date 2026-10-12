@@ -1,0 +1,11 @@
+{
+  "name": "ronivet",
+  "private": true,
+  "description": "Ferramentas de teste do aplicativo (web/) e do núcleo local.",
+  "scripts": {
+    "test:js": "node --test jstests/*.test.js nucleo/test/*.test.js"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "6.2.5"
+  }
+}

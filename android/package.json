@@ -1,0 +1,18 @@
+{
+  "name": "ronivet-android",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Aplicativo Android (Capacitor) do RoniVet: embute a pasta web/.",
+  "scripts": {
+    "sync": "node sincronizar.js"
+  },
+  "dependencies": {
+    "@capacitor-community/file-opener": "^6.0.1",
+    "@capacitor/android": "^6.2.2",
+    "@capacitor/core": "^6.2.2",
+    "@capacitor/filesystem": "^6.0.4"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.2"
+  }
+}
